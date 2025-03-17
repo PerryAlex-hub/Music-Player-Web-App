@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Sets the character encoding for the document -->
+  <meta charset="UTF-8">
+  
+  <!-- Makes the page responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title of the webpage (appears in the browser tab) -->
+  <title>Music Player</title>
+
+  <!-- Links an external CSS file for styling -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Links FontAwesome icons for use in navigation and controls -->
+  <script src="https://kit.fontawesome.com/cfa11dba34.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div class="container">  <!-- Main container for the music player -->
+     
+    <div class="music-player">  <!-- Music player container -->
+      <nav>  <!-- Navigation section -->
+        <div class="circle">  <!-- Left navigation button -->
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+
+        <div class="circle" onclick="toggleSidebar()">  <!-- Menu button -->
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <!-- Displays the album/song image -->
+      <img src="media/468-thumbnail.png" class="song-img" id="album-art">
+
+      <!-- Song title -->
+      <h1 id="song-title"></h1>
+      
+      <!-- Artist name -->
+      <p id="artist-name">  </p>
+
+      <!-- Audio player setup with the song file -->
+      <audio id="song" onended="playNextSong()">
+        <source src="media/Kunmie_-_Arike.mp3" type="audio/mpeg"> 
+      </audio>
+
+      <div class="file-input-wrapper">
+        <label for="fileInput" class="custom-file-label">Upload a Song</label>
+        <input type="file" id="fileInput" accept="audio/*" class="custom-file-input" multiple>
+      </div>
+
+      <!-- Progress bar for tracking song duration -->
+      <input type="range" value="0" id="progress">
+
+      <div class="controls">  <!-- Music player control buttons -->
+        <div onclick="rewindSong()">
+          <i class="fa-solid fa-backward"></i>  <!-- Previous song button -->
+        </div>
+
+        <div onclick="playPause()">  <!-- Play/Pause button with event listener -->
+          <i class="fa-solid fa-play" id="ctrlIcon"></i>
+        </div>
+
+        <div onclick="forwardSong()">
+          <i class="fa-solid fa-forward"></i>  <!-- Next song button -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+   <!-- Sidebar for Playlist -->
+  <div class="sidebar" id="sidebar">
+    <h2>Playlist</h2>
+    <ul id="playlist"></ul>
+
+    <!-- Add to Playlist Button -->
+    <button class="add-playlist-btn" onclick="addToPlaylist()">Add to Playlist</button>
+
+  </div>
+
+  <!-- Links the JavaScript file for functionality -->
+  <script src="script.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+
+
+</body>
+</html>
