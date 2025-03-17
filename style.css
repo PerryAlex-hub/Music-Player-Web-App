@@ -9,22 +9,24 @@
 /* Main container styling */
 .container {
   width: 100%;
-  height: 190vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #222, #444);
-
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 /* Music player styling */
 .music-player {
   background-color: pink;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 25px 35px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Navigation styling */
@@ -47,7 +49,8 @@ nav .circle {
 
 /* Song image styling */
 .song-img {
-  width: 220px;
+  width: 100%;
+  max-width: 220px;
   border-radius: 50%;
   border: 8px solid #e2e2e2;
   box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
@@ -150,7 +153,6 @@ nav .circle {
   color: #fff;
   overflow-y: auto;
   border-radius: 0 10px 10px 0;
-  
 }
 
 .sidebar.active {
@@ -200,4 +202,21 @@ nav .circle {
   background-color: #f53192;
   color: #fff;
   transform: scale(1.05);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .music-player {
+    padding: 20px 25px;
+  }
+
+  .controls div {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+  }
+
+  .controls div:nth-child(2) {
+    transform: scale(1.3);
+  }
 }
