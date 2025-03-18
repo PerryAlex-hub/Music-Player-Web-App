@@ -113,81 +113,27 @@ nav .circle {
   transform: scale(1.05);
 }
 
-
 /* Responsive styling */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
   .music-player {
-    width: 90%;
-    max-width: 350px;
-    padding: 15px;
+    padding: 20px 25px;
   }
 
-  .song-img {
-    max-width: 180px;
-    border-width: 6px;
+  .controls div {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
   }
 
   .sidebar {
-    width: 100%; /* Full-width for small screens */
-    left: -100%; /* Hide off-screen */
-    border-radius: 0;
-    height: 100vh;
+    width: 60%; /* Adjust sidebar width for smaller screens */
+    height: 65%;
+    top: 20%;
   }
-
-  .sidebar.active {
-    left: 0;
-  }
-
-  .controls {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .controls div {
-    width: 45px;
-    height: 45px;
-    margin: 10px;
-  }
-
   .controls div:nth-child(2) {
-    transform: scale(1.2);
-  }
-
-  #progress {
-    height: 4px;
-    margin: 20px 0;
-  }
-
-  .custom-file-label {
-    padding: 8px 15px;
-    font-size: 14px;
+    transform: scale(1.3);
   }
 }
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-  .music-player {
-    max-width: 320px;
-    padding: 10px;
-  }
-
-  .song-img {
-    max-width: 150px;
-  }
-
-  .controls div {
-    width: 40px;
-    height: 40px;
-    margin: 8px;
-  }
-}
-
 
 /* Song image styling */
 .song-img {
